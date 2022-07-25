@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
-app.get("/", (req, res) => {
+app.get("/giabao", (req, res) => {
   const healthcheck = {
     uptime: process.uptime(),
     message: "Bao Đẹp trai ",
