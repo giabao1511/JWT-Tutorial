@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { deleteUser, getAllUsers } from "../../redux/apiRequest";
-import "./home.css";
-import { loginSuccess } from "../../redux/authSlice";
 import { createAxios } from "../../createInstance";
+import { deleteUser, getAllUsers } from "../../redux/apiRequest";
+import { loginSuccess } from "../../redux/authSlice";
+import "./home.css";
 
 const HomePage = () => {
   const { currentUser } = useSelector((state) => state.auth);
@@ -27,7 +27,7 @@ const HomePage = () => {
     currentUser
       ? getAllUsers(currentUser.accessToken, dispatch, axiosJWT)
       : navigate("/login");
-  }, []);
+  }, [navigate]);
 
   return (
     <main className="home-container">

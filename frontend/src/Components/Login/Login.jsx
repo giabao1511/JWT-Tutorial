@@ -1,10 +1,10 @@
-import "./login.css";
-import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { loginUser } from "../../redux/apiRequest";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { loginUser } from "../../redux/apiRequest";
 import Input from "../InputField/Input";
+import "./login.css";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +31,7 @@ const Login = () => {
         navigate("/");
       }
     }
-  }, [currentUser]);
+  }, [currentUser, navigate]);
 
   return (
     <section className="login-container">

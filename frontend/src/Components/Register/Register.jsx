@@ -37,7 +37,7 @@ const Register = () => {
         }, 2000);
       }
     }
-  }, [newUser]);
+  }, [newUser, dispatch, navigate]);
 
   return (
     <section className="register-container">
