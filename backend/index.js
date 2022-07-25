@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
 app.use("/v1/auth", authRoute);
 app.use("/v1/user", userRoute);
 
-app.listen("8000", () => {
-  console.log(`Server is running on port 8000`);
-});
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () =>
+  console.log(`server is listening on port:http://localhost:${PORT}`)
+);
