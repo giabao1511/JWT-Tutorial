@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cd backend && node index.js ",
     "client": "cd frontend && npm run start",
-    "dev": "cd backend && nodemon index.js"
+    "dev": "cd backend && nodemon index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "",

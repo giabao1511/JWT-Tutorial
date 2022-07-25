@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -28,3 +29,8 @@ const PORT = process.env.PORT || 8000;
 app.listen(PORT, () =>
   console.log(`server is listening on port:http://localhost:${PORT}`)
 );
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
