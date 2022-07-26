@@ -24,7 +24,7 @@ export const loginUser = async (user, dispatch) => {
   dispatch(loginStart());
   try {
     const res = await axios.post(
-      "https://shopgaugau.herokuapp.com/v1/auth/login",
+      "https://giabaojwt.herokuapp.com/v1/auth/login",
       user
     );
     dispatch(loginSuccess(res.data));
@@ -38,7 +38,7 @@ export const registerUser = async (user, dispatch) => {
   dispatch(registerStart());
   try {
     const res = await axios.post(
-      "https://shopgaugau.herokuapp.com/v1/auth/register",
+      "https://giabaojwt.herokuapp.com/v1/auth/register",
       user
     );
     dispatch(registerSuccess(res.data));
@@ -52,7 +52,7 @@ export const getAllUsers = async (accessToken, dispatch, axiosJWT) => {
   dispatch(getAllStart());
   try {
     const res = await axiosJWT.get(
-      "https://shopgaugau.herokuapp.com/v1/user/",
+      "https://giabaojwt.herokuapp.com/v1/user/",
       {
         headers: { token: `Bearer ${accessToken}` },
       }
@@ -68,7 +68,7 @@ export const deleteUser = async (accessToken, dispatch, id, axiosJWT) => {
   dispatch(deleteUserStart());
   try {
     const res = await axiosJWT.delete(
-      "https://shopgaugau.herokuapp.com/v1/user/" + id,
+      "https://giabaojwt.herokuapp.com/v1/user/" + id,
       {
         headers: { token: `Bearer ${accessToken}` },
       }
@@ -90,7 +90,7 @@ export const logoutUser = async (
   dispatch(logoutStart());
   try {
     const res = await axiosJWT.post(
-      "https://shopgaugau.herokuapp.com/v1/auth/logout",
+      "https://giabaojwt.herokuapp.com/v1/auth/logout",
       id,
       {
         headers: { token: `Bearer ${accessToken}` },
